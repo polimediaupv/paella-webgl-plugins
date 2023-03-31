@@ -91,4 +91,8 @@ export default class Shader {
     bindFloat(uniformName, value) {
         this.gl.uniform1f(this.uniforms[uniformName], value);
     }
+
+    bindMatrix4(uniformName, value) {
+        this.gl.uniformMatrix4fv(this.uniforms[uniformName], false, value);
+    }
 }
