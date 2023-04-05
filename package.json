@@ -1,5 +1,5 @@
 {
-  "name": "paella-zoom-plugin",
+  "name": "paella-webgl-plugins",
   "version": "1.25.0",
   "description": "A plugin to zoom videos for Paella Player",
   "main": "src/index.js",
