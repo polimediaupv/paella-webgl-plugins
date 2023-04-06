@@ -83,6 +83,8 @@ export class Video360Canvas extends Canvas {
             else if (this.currentZoom < this.minZoom) {
                 this.currentZoom = this.minZoom;
             }
+            evt.stopPropagation();
+            evt.preventDefault();
         });
 
         this.element.addEventListener('mouseout', evt => {

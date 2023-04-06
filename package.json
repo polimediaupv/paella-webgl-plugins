@@ -1,16 +1,16 @@
 {
   "name": "paella-webgl-plugins",
-  "version": "1.25.0",
+  "version": "1.25.1",
   "description": "A plugin to zoom videos for Paella Player",
   "main": "src/index.js",
-  "module": "dist/paella-zoom-plugin.js",
+  "module": "dist/paella-webgl-plugins.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development --config webpack.debug.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/polimediaupv/paella-zoom-plugin.git"
+    "url": "git+https://github.com/polimediaupv/paella-webgl-plugins.git"
   },
   "keywords": [
     "paella",
@@ -24,9 +24,9 @@
   "author": "Fernando Serrano Carpena <ferserc1@gmail.com>",
   "license": "SEE LICENSE IN license.txt",
   "bugs": {
-    "url": "https://github.com/polimediaupv/paella-zoom-plugin/issues"
+    "url": "https://github.com/polimediaupv/paella-webgl-plugins/issues"
   },
-  "homepage": "https://github.com/polimediaupv/paella-zoom-plugin#readme",
+  "homepage": "https://github.com/polimediaupv/paella-webgl-plugins#readme",
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
