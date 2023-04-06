@@ -153,15 +153,17 @@ export class Video360Canvas extends Canvas {
         
         const canvas = this.element;
         const draw = () => {
+            const w = canvas.clientWidth;
+            const h = canvas.clientHeight;
+
             const fov = 45 * this.currentZoom;
-            const projection = Mat4.MakePerspective(fov, 1.33, 0.01, 10.0);
+            const aspectRatio = w / h;
+            const projection = Mat4.MakePerspective(fov, isNaN(aspectRatio) ? 16/9 : aspectRatio, 0.01, 10.0);
             const view = Mat4.MakeIdentity();
             const model = Mat4.MakeRotation(this._yaw, 0, 1, 0);
             model.rotate(this._pitch, 1, 0, 0);
 
             videoTexture.updateTexture();
-            const w = canvas.clientWidth;
-            const h = canvas.clientHeight;
             canvas.width = w;
             canvas.height = h;
             gl.viewport(0, 0, w, h);
