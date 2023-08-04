@@ -1,6 +1,6 @@
 {
   "name": "paella-webgl-plugins",
-  "version": "1.25.2",
+  "version": "1.41.0",
   "description": "A plugin to zoom videos for Paella Player",
   "main": "src/index.js",
   "module": "dist/paella-webgl-plugins.js",
@@ -42,6 +42,6 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
-    "paella-core": "^1.25.1"
+    "paella-core": "^1.41.0"
   }
 }

@@ -5,6 +5,7 @@ import SceneObject from '../js/SceneObject';
 import VideoTexture from '../js/VideoTexture';
 import { createSphere } from '../js/primitives';
 import Mat4 from '../js/math/Mat4';
+import WebGLPluginsModule from './WebGLPluginModule';
 
 const vertex = `
 precision highp float;
@@ -183,6 +184,14 @@ export class Video360Canvas extends Canvas {
 }
 
 export default class Video360CanvasPlugin extends CanvasPlugin {
+    getPluginModuleInstance() {
+        return WebGLPluginsModule.Get();
+    }
+
+    get name() {
+        return super.name || "es.upv.paella.video360Canvas";
+    }
+
     get canvasType() { return "video360"; }
 
     isCompatible(stream) {
