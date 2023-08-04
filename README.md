@@ -2,7 +2,54 @@
 
 A set of canvas plugins to show videos using a WebGL canvas.
 
+## Usage
 
+**Step 1:** Import the plugin context and add it to the Paella Player initialization parameters:
+
+Usin plugin context API:
+
+```javascript
+...
+import getWebGLPluginsContext from 'paella-webgl-plugins';
+
+let paella = new Paella('player-container', {
+    customPluginContext: [
+        getWebGLPluginsContext()
+    ]
+});
+...
+```
+
+Using explicit plugin import API (paella-basic-plugins >= 1.41):
+
+```javascript
+...
+import {
+    webglPlugins, // All plugins
+} from 'paella-webgl-plugins';
+
+let paella = new Paella('player-container', {
+    plugins: [
+        ...webglPlugins
+    ]
+});
+...
+```
+
+**Step 2:** Configure the plugins you want to use in the paella player configuration.
+
+```json
+{
+    "plugins": {
+        ...
+       "es.upv.paella.video360Canvas": {
+            "enabled": true,
+            ...
+        },
+        ... other plugin settings
+    }
+}
+```
 
 ## Video 360 Canvas
 
