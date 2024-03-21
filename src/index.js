@@ -14,4 +14,6 @@ export const webglPlugins = [
     }
 ];
 
+export const allPlugins = webglPlugins;
+
 export const Video360CanvasPlugin = Video360Canvas;
