@@ -1,4 +1,4 @@
-import { CanvasPlugin, Canvas, createElementWithHtmlText } from 'paella-core';
+import { CanvasPlugin, Canvas } from 'paella-core';
 import WebGLCanvas from '../js/WebGLCanvas';
 import Shader from '../js/Shader';
 import SceneObject from '../js/SceneObject';
@@ -61,9 +61,11 @@ export class Video360Canvas extends Canvas {
         let drag = false;
         this._pitch = 0;
         this._yaw = 0;
+        let initialDownPosition = [0,0];
         this.element.addEventListener('mousedown', evt => {
             drag = true;
             downPosition = [evt.clientX, evt.clientY];
+            initialDownPosition = [evt.clientX, evt.clientY];
             evt.stopPropagation();
         });
 
@@ -71,7 +73,11 @@ export class Video360Canvas extends Canvas {
             evt.stopPropagation();
         });
 
-        this.element.addEventListener('mouseup', evt => {
+        this.element.addEventListener('mouseup', async evt => {
+            if (initialDownPosition[0] == evt.clientX && initialDownPosition[1] == evt.clientY) {
+                const isPaused = await player.paused();
+                isPaused ? player.play() : player.pause();
+            }
             drag = false;
             evt.stopPropagation();
         });
@@ -94,6 +100,7 @@ export class Video360Canvas extends Canvas {
         });
 
         this.element.addEventListener('mousemove', evt => {
+            player.showUserInterface();
             if (drag) {
                 const newPos = [evt.clientX, evt.clientY];
                 const diff = [downPosition[0] - newPos[0], downPosition[1] - newPos[1]];
