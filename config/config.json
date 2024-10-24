@@ -111,6 +111,11 @@
             "side": "left",
             "target": "presenter",
             "order": 1
+        },
+
+        "es.upv.paella.llmChat": {
+            "enabled": true,
+            "side": "right"
         }
     }
 }

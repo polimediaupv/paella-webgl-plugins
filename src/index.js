@@ -1,13 +1,13 @@
 
-import Video360Canvas from './plugins/es.upv.paella.video360Canvas';
+import LLMChat from './plugins/es.upv.paella.llmChat.js';
 
-export default function getWebGLPluginsContext() {
+export default function geChatPluginContext() {
     return require.context("./plugins", true, /\.js/)
 }
 
 export const webglPlugins = [
     {
-        plugin: Video360Canvas,
+        plugin: LLMChat,
         config: {
             enabled: false
         }
@@ -16,4 +16,4 @@ export const webglPlugins = [
 
 export const allPlugins = webglPlugins;
 
-export const Video360CanvasPlugin = Video360Canvas;
+export const LLMChatPlugin = LLMChat;

@@ -1,9 +1,9 @@
 import { Paella } from 'paella-core';
-import getZoomPluginContext from './index';
+import getPluginContext from './index';
 
 const initParams = {
     customPluginContext: [
-        getZoomPluginContext()
+        getPluginContext()
     ]
 };
 
