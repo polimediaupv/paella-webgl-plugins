@@ -1,9 +1,9 @@
 {
-  "name": "paella-webgl-plugins",
+  "name": "paella-llm-chat",
   "version": "1.41.1",
-  "description": "A plugin to zoom videos for Paella Player",
+  "description": "LLM chat for paella-core",
   "main": "src/index.js",
-  "module": "dist/paella-webgl-plugins.js",
+  "module": "dist/paella-llm-chat.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve --mode development --config webpack.debug.js"
@@ -42,6 +42,13 @@
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
-    "paella-core": "^1.41.0"
+    "@babel/preset-react": "^7.25.9",
+    "@langchain/community": "^0.3.8",
+    "@langchain/ollama": "^0.1.0",
+    "@mlc-ai/web-llm": "^0.2.73",
+    "langchain": "^0.3.3",
+    "paella-core": "^1.41.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

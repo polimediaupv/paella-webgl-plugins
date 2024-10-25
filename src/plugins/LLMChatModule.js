@@ -3,16 +3,16 @@ import packageData from "../../package.json";
 
 let g_pluginModule = null;
 
-export default class WebGLPluginsModule extends PluginModule {
+export default class LLMChatModule extends PluginModule {
     static Get() {
         if (!g_pluginModule) {
-            g_pluginModule = new WebGLPluginsModule();
+            g_pluginModule = new LLMChatModule();
         }
         return g_pluginModule;
     }
 
     get moduleName() {
-        return "paella-webgl-plugins";
+        return "paella-llm-chat";
     }
 
     get moduleVersion() {
